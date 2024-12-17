@@ -71,6 +71,7 @@ fun ShoppingListApp() {
                             sItems = sItems + newItem
                             showDialog = false
                             itemName = ""
+                            itemQuantity = ""
                         }
                     }) {
                         Text("Add")
@@ -88,7 +89,7 @@ fun ShoppingListApp() {
                         onValueChange = {itemName = it },
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth().padding(8.dp)
-                        )
+                    )
                     OutlinedTextField(
                         value = itemQuantity,
                         onValueChange = {itemQuantity = it },
@@ -96,14 +97,7 @@ fun ShoppingListApp() {
                         modifier = Modifier.fillMaxWidth().padding(8.dp)
                     )
                 }
-                   },
-            /*confirmButton = { Button(onClick = { /*TODO*/ }) {
-                Text("Confirm")
-            } },
-            dismissButton = { Button(onClick = { /*TODO*/ }) {
-                Text("Dismiss")
-            }}
-             */
+            },
         )
     }
 }
