@@ -50,10 +50,26 @@ fun ShoppingListApp() {
             onClick = {showDialog = true},
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
+            /*
+            Adding complex calculations in the UI thread is not ethical coding, as this can cause the app to freeze.
+            But the code below is just serving as an example of a lambda expression:
+
+            Lambda expressions can/must? ve declared using the val or var keywords?
+            Lambda expression using thw "it" keyword to replace the variable declaration:
+            val doubleNumber: (Int) -> Int = { it * 2 }
+
+            // Own Lambda expression:
+            val dylsLamdaExpression: (Int) -> Int = { it * 37 }
+
+            //Using the above Lambda expression:
+            //Text(doubleNumber(5).toString())
+            Text(dylsLamdaExpression(1).toString())
+             */
+
             Text("Add Item")
         }
         LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(16.dp)
+            modifier = Modifier.fillMaxSize().padding(8.dp)
         ) {
             items(sItems){
                 ShoppingListItem(it, {}, {}) //{ }
