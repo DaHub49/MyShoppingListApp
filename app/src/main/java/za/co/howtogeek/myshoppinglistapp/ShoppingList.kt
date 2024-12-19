@@ -78,10 +78,20 @@ fun ShoppingListApp() {
             Text("Add Item")
         }
         LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(8.dp)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
         ) {
             items(sItems){
-                ShoppingListItem(it, {}, {}) //{ }
+                item ->
+                if (item.isEditing)
+                    ShoppingItemEditor(item = item, onEditComplete = {
+                        editedName, editedQuantity ->
+                        sItems = sItems.map {S}
+                    })
+                else
+                    //ShoppingListItem(item = , onEditClick = { /*TODO*/ }) { }
+                //ShoppingListItem(it, {}, {}) //{ }
             }
         }
 
